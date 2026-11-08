@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Memories - Session 2026-27</title>
+  <style>
+    :root {
+      --bg-color: #f7f9fa;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --primary: #2563eb;
+      --border-color: #374151;
+      --border-hover: #1d4ed8;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      color: #111827;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .message {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .message a {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .message a:hover {
+      color: #1d4ed8;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .gallery-item {
+      background: var(--card-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Modal / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 3px solid #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #ffffff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 10px;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+    }
+
+    .modal-close:hover {
+      color: #f87171;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+      .message {
+        font-size: 1rem;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>School Memories - Session 2026-27</h1>
+      <p class="message">
+        Congratulations! You have successfully solved all the stages of the puzzle. This website contains precious school memorabilia from our passing-out year. These pictures might be trivial to you, but to us, they are a treasure trove. Please note that this is just a glimpse of the actual reward that awaits you. To claim it, just write an email to <a href="mailto:wasizahid1455@gmail.com?subject=I%20solved%20it">wasizahid1455@gmail.com</a> with the subject 'I solved it'.
+      </p>
+    </header>
+
+    <main class="gallery">
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-08 172945.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-20 224721.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-20 225148.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-20 225229.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-21 230111.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-21 233017.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-21 233038.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-07-23 210748.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-11 191047.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-11 191108.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-11 191126.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-11 193503.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-12 230534.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-12 230633.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-13 230504.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-13 230541.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-14 191246.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-14 200728.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-14 202246.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-17 202549.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-18 215043.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-18 225413.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-19 223726.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-19 224631.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-24 202032.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-08-26 195953.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-09-18 204613.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-09-23 234119.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-09-28 221534.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-09-28 221706.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-10-08 232436.png" alt="School Memory" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot 2026-11-06 204218.png" alt="School Memory" loading="lazy">
+      </div>
+    </main>
+
+    <footer>
+      &copy; Session 2026-27 &bull; School Memories
+    </footer>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Enlarged view">
+  </div>
+
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.getElementById('modalClose');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
